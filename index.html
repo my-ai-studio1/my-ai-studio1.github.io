@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My AI Studio — reklama video buyurtma</title>
+<meta name="description" content="AI bilan professional reklama video: o'zbekcha ovoz, so'zma-so'z subtitr, Reels / TikTok / Shorts. Instagram, Telegram yoki telefon orqali buyurtma bering.">
+<meta name="theme-color" content="#6D3FEA">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://my-ai-studio1.github.io/">
+<meta property="og:title" content="My AI Studio — reklama video buyurtma">
+<meta property="og:description" content="AI bilan professional reklama video: o'zbekcha ovoz, subtitr, Reels / TikTok. Bog'laning — tez tayyorlab beramiz.">
+<meta property="og:image" content="https://my-ai-studio1.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap">
+<style>
+:root {
+  --ink: #0A0A12;
+  --muted: #475063;
+  --card: #FFFFFF;
+  --line: rgba(60, 40, 120, .10);
+  --violet: #7C3AED;
+  --indigo: #4F46E5;
+  --cyan: #06B6D4;
+  --page: #F7F5FF;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  min-height: 100vh; min-height: 100dvh;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--page);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+/* soft brand light, same as the video end card */
+body::before {
+  content: ""; position: fixed; inset: -20vmax; z-index: -1;
+  background:
+    radial-gradient(45vmax 45vmax at 10% 8%, rgba(124, 58, 237, .30), transparent 70%),
+    radial-gradient(48vmax 48vmax at 95% 95%, rgba(6, 182, 212, .30), transparent 70%),
+    radial-gradient(30vmax 30vmax at 92% 10%, rgba(236, 72, 153, .14), transparent 70%),
+    #FFFFFF;
+}
+main {
+  width: 100%; max-width: 460px; margin: 0 auto;
+  padding: max(40px, env(safe-area-inset-top)) 16px max(32px, env(safe-area-inset-bottom));
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.lang {
+  align-self: flex-end; display: flex; gap: 4px; margin-bottom: 18px;
+  background: rgba(255, 255, 255, .7); border: 1px solid var(--line); border-radius: 999px; padding: 4px;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.lang button {
+  font: 600 13px/1 "Inter", sans-serif; color: var(--muted);
+  border: 0; background: transparent; padding: 8px 12px; border-radius: 999px; cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+
+.logo-wrap { position: relative; width: 136px; height: 136px; margin-bottom: 24px; animation: float 4s ease-in-out infinite; }
+.logo-wrap::before {
+  content: ""; position: absolute; inset: -50px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, .50), rgba(34, 211, 238, .28) 45%, transparent 70%);
+  animation: breathe 3.2s ease-in-out infinite;
+}
+.logo { position: relative; display: block; width: 136px; height: 136px; overflow: visible;
+  filter: drop-shadow(0 18px 22px rgba(79, 70, 229, .40)); animation: pop .8s cubic-bezier(.34, 1.56, .64, 1) both; }
+.logo .sp1 { transform-origin: 103px 33px; animation: twinkle 2.2s ease-in-out infinite; }
+.logo .sp2 { transform-origin: 118px 58px; animation: twinkle 2.2s ease-in-out .9s infinite; }
+.logo .shine { animation: shine 4.5s ease-in-out 1s infinite; }
+.logo .play { transform-origin: 62px 70px; animation: beat 4.5s ease-in-out 1.6s infinite; }
+h1 { font-weight: 900; font-size: clamp(36px, 10vw, 46px); letter-spacing: -.02em; line-height: 1.05; }
+h1 .ai {
+  background: linear-gradient(90deg, var(--violet), var(--indigo) 55%, var(--cyan));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.tag { margin-top: 10px; font-weight: 600; font-size: 17px; line-height: 1.45; color: var(--muted); max-width: 340px; }
+
+.links { width: 100%; display: flex; flex-direction: column; gap: 14px; margin-top: 30px; }
+.btn {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: flex; align-items: center; gap: 14px; width: 100%;
+  padding: 12px 18px 12px 12px; border-radius: 999px; text-decoration: none; color: var(--ink);
+  background: var(--card); border: 1px solid var(--line);
+  box-shadow: 0 10px 28px -14px rgba(40, 30, 90, .45);
+  transition: transform .15s ease, box-shadow .15s ease;
+  opacity: 0; animation: slide .6s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+.btn::after { /* light sweeping across the button */
+  content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: -40%; width: 30%;
+  background: linear-gradient(100deg, transparent, rgba(124, 58, 237, .10) 40%, rgba(6, 182, 212, .14) 60%, transparent);
+  transform: skewX(-18deg); animation: sweep 5s ease-in-out infinite;
+}
+.btn:nth-child(2)::after { animation-delay: 1.6s; }
+.btn:nth-child(3)::after { animation-delay: 3.2s; }
+.btn:nth-child(1) { animation-delay: .25s; --from: -40px; }
+.btn:nth-child(2) { animation-delay: .40s; --from: 40px; }
+.btn:nth-child(3) { animation-delay: .55s; --from: -40px; }
+.btn:active { transform: scale(.98); }
+@media (hover: hover) { .btn:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -14px rgba(40, 30, 90, .55); } }
+.badge {
+  position: relative; flex: none; width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center;
+  box-shadow: inset 0 10px 16px -10px rgba(255, 255, 255, .75), 0 6px 14px -6px var(--glow);
+}
+.badge::before { /* soft ring that pulses out of the badge */
+  content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--glow);
+  animation: ping 2.4s cubic-bezier(0, 0, .2, 1) infinite;
+}
+.badge svg { position: relative; width: 27px; height: 27px; fill: #fff; }
+.ig { --glow: rgba(221, 42, 123, .55); background: linear-gradient(45deg, #FEDA75 0%, #F58529 25%, #DD2A7B 55%, #8134AF 85%);
+  background-size: 180% 180%; animation: igmove 4s ease-in-out infinite; }
+.ig svg { animation: heart 2.4s ease-in-out infinite; }
+.tg { --glow: rgba(0, 136, 204, .55); background: linear-gradient(180deg, #37BBFE, #0088CC); }
+.tg::before { animation-delay: .8s; }
+.tg svg { animation: fly 2.6s ease-in-out infinite; }
+.ph { --glow: rgba(22, 163, 74, .55); background: linear-gradient(180deg, #4ADE80, #16A34A); }
+.ph::before { animation-delay: 1.6s; }
+.ph svg { animation: ring 2.4s ease-in-out infinite; transform-origin: 50% 50%; }
+.txt { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; text-align: left; }
+.txt b { font-weight: 800; font-size: 18px; letter-spacing: -.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.txt span { font-weight: 600; font-size: 13px; color: var(--muted); margin-top: 2px; }
+.arrow { margin-left: auto; flex: none; width: 20px; height: 20px; fill: none; stroke: #9AA1B2; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+.services { width: 100%; margin-top: 34px; padding: 20px 18px; border-radius: 24px; background: rgba(255, 255, 255, .72);
+  border: 1px solid var(--line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); text-align: left; }
+.services h2 { font-weight: 800; font-size: 16px; margin-bottom: 12px; }
+.services ul { list-style: none; display: grid; gap: 10px; }
+.services li { display: flex; gap: 10px; align-items: flex-start; font-weight: 600; font-size: 15px; line-height: 1.4; color: #2A3142; }
+.services li i { font-style: normal; flex: none; width: 26px; text-align: center; }
+footer { margin-top: 26px; font-weight: 600; font-size: 12px; color: #8A91A3; }
+
+@keyframes pop { from { transform: scale(.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes breathe { 0%, 100% { transform: scale(.94); opacity: .85; } 50% { transform: scale(1.06); opacity: 1; } }
+@keyframes slide { from { opacity: 0; transform: translateX(var(--from)); } to { opacity: 1; transform: none; } }
+@keyframes ring { 0%, 62%, 100% { transform: rotate(0); } 66% { transform: rotate(-14deg); } 70% { transform: rotate(13deg); }
+  74% { transform: rotate(-11deg); } 78% { transform: rotate(9deg); } 82% { transform: rotate(-5deg); } 86% { transform: rotate(0); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes twinkle { 0%, 100% { transform: scale(1) rotate(0); opacity: 1; } 50% { transform: scale(.55) rotate(45deg); opacity: .65; } }
+@keyframes shine { 0%, 55% { transform: translateX(-160px); } 85%, 100% { transform: translateX(170px); } }
+@keyframes beat { 0%, 70%, 100% { transform: scale(1); } 78% { transform: scale(1.12); } 86% { transform: scale(.97); } }
+@keyframes sweep { 0%, 55% { left: -40%; } 100% { left: 120%; } }
+@keyframes ping { 0% { transform: scale(1); opacity: .9; } 80%, 100% { transform: scale(1.55); opacity: 0; } }
+@keyframes heart { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.16); } 30% { transform: scale(.96); } 45% { transform: scale(1.1); } 60% { transform: scale(1); } }
+@keyframes fly { 0%, 100% { transform: translate(0, 0) rotate(0); } 25% { transform: translate(2px, -3px) rotate(-8deg); } 50% { transform: translate(3px, -1px) rotate(4deg); } 75% { transform: translate(-1px, 1px) rotate(-3deg); } }
+@keyframes igmove { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+@media (prefers-reduced-motion: reduce) { *, *::before { animation: none !important; } .btn { opacity: 1; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="lang" role="group" aria-label="Til / Язык / Language">
+    <button type="button" data-l="uz" aria-pressed="true">UZ</button>
+    <button type="button" data-l="ru" aria-pressed="false">RU</button>
+    <button type="button" data-l="en" aria-pressed="false">EN</button>
+  </div>
+
+  <div class="logo-wrap">
+    <svg class="logo" viewBox="0 0 136 136" role="img" aria-label="My AI Studio">
+      <defs>
+        <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#4F46E5"/><stop offset="1" stop-color="#06B6D4"/>
+        </linearGradient>
+        <linearGradient id="gl" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity=".32"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="sh" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <clipPath id="cp"><rect width="136" height="136" rx="32"/></clipPath>
+      </defs>
+      <g clip-path="url(#cp)">
+        <rect width="136" height="136" fill="url(#lg)"/>
+        <rect width="136" height="136" fill="url(#gl)"/>
+        <rect class="shine" x="0" y="-30" width="40" height="200" fill="url(#sh)" transform="translate(-160 0)" style="transform-box: view-box"/>
+      </g>
+      <path class="play" d="M47 41.5c0-3.4 3.7-5.5 6.6-3.7l39 25.7c2.6 1.7 2.6 5.6 0 7.3l-39 25.7c-2.9 1.9-6.6-.2-6.6-3.7z" fill="#fff"/>
+      <path class="sp1" d="M103 15c1.4 9.5 4.5 12.6 14 14-9.5 1.4-12.6 4.5-14 14-1.4-9.5-4.5-12.6-14-14 9.5-1.4 12.6-4.5 14-14z" fill="#FFC93C"/>
+      <path class="sp2" d="M118 50c.7 4.5 2.4 6.2 7 7-4.6.8-6.3 2.5-7 7-.7-4.5-2.4-6.2-7-7 4.6-.8 6.3-2.5 7-7z" fill="#fff"/>
+    </svg>
+  </div>
+  <h1>My <span class="ai">AI</span> Studio</h1>
+  <p class="tag" data-t="tag">AI bilan professional reklama video buyurtma qiling</p>
+
+  <nav class="links">
+    <a class="btn" href="https://instagram.com/my_ai_studio1" target="_blank" rel="noopener">
+      <span class="badge ig"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm4.9-8.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM20.9 7.2c-.1-1.5-.4-2.8-1.5-3.9S17 1.9 15.5 1.8C13.9 1.7 10.1 1.7 8.5 1.8 7 1.9 5.7 2.2 4.6 3.3S3.2 5.7 3.1 7.2C3 8.8 3 12.6 3.1 14.2c.1 1.5.4 2.8 1.5 3.9s2.4 1.4 3.9 1.5c1.6.1 5.4.1 7 0 1.5-.1 2.8-.4 3.9-1.5s1.4-2.4 1.5-3.9c.1-1.6.1-5.4 0-7zm-2 9.3c-.3.8-1 1.5-1.8 1.8-1.3.5-4.3.4-5.1.4s-3.9.1-5.1-.4c-.8-.3-1.5-1-1.8-1.8-.5-1.3-.4-4.3-.4-5.1s-.1-3.9.4-5.1c.3-.8 1-1.5 1.8-1.8 1.3-.5 4.3-.4 5.1-.4s3.9-.1 5.1.4c.8.3 1.5 1 1.8 1.8.5 1.3.4 4.3.4 5.1s.1 3.9-.4 5.1z"/></svg></span>
+      <span class="txt"><b>@my_ai_studio1</b><span data-t="ig">Instagram — namunalar va DM</span></span>
+      <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <a class="btn" href="https://t.me/alltech_mobile" target="_blank" rel="noopener">
+      <span class="badge tg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4 4.1 2.9 11.2c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.1.9.8.9.5 0 .7-.2 1-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.5-1.9zM8.6 13.9l9.7-6.1c.5-.3.9-.1.5.2l-8.3 7.5-.3 3.5-1.6-5.1z"/></svg></span>
+      <span class="txt"><b>@alltech_mobile</b><span data-t="tg">Telegram — tez javob</span></span>
+      <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <a class="btn" href="tel:+12672619083">
+      <span class="badge ph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg></span>
+      <span class="txt"><b>+1 (267) 261-9083</b><span data-t="ph">Qo'ng'iroq qilish</span></span>
+      <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+  </nav>
+
+  <section class="services">
+    <h2 data-t="h">Nima qilib beramiz</h2>
+    <ul>
+      <li><i>🎬</i><span data-t="s1">Reklama video — Reels, TikTok, YouTube Shorts uchun</span></li>
+      <li><i>🎙</i><span data-t="s2">O'zbekcha professional diktor ovozi</span></li>
+      <li><i>✨</i><span data-t="s3">So'zma-so'z subtitr, brend va raqamlar rangli</span></li>
+      <li><i>🖼</i><span data-t="s4">Sizning rasm va videolaringizdan yoki AI sahnalar bilan</span></li>
+      <li><i>⚡</i><span data-t="s5">Tez tayyorlanadi, istagingizcha tuzatib beramiz</span></li>
+    </ul>
+  </section>
+
+  <footer>© My AI Studio</footer>
+</main>
+<script>
+const T = {
+  uz: { tag: "AI bilan professional reklama video buyurtma qiling", ig: "Instagram — namunalar va DM", tg: "Telegram — tez javob",
+        ph: "Qo'ng'iroq qilish", h: "Nima qilib beramiz", s1: "Reklama video — Reels, TikTok, YouTube Shorts uchun",
+        s2: "O'zbekcha professional diktor ovozi", s3: "So'zma-so'z subtitr, brend va raqamlar rangli",
+        s4: "Sizning rasm va videolaringizdan yoki AI sahnalar bilan", s5: "Tez tayyorlanadi, istagingizcha tuzatib beramiz" },
+  ru: { tag: "Закажите профессиональное рекламное видео с AI", ig: "Instagram — примеры и DM", tg: "Telegram — быстрый ответ",
+        ph: "Позвонить", h: "Что мы делаем", s1: "Рекламные видео для Reels, TikTok, YouTube Shorts",
+        s2: "Профессиональная озвучка на узбекском и русском", s3: "Пословные субтитры, бренды и цифры в цвете",
+        s4: "Из ваших фото и видео или с AI-сценами", s5: "Быстро, с правками по вашему желанию" },
+  en: { tag: "Order a professional AI-made ad video", ig: "Instagram — samples & DM", tg: "Telegram — quick reply",
+        ph: "Call now", h: "What we make", s1: "Ad videos for Reels, TikTok, YouTube Shorts",
+        s2: "Professional voice-over (Uzbek, Russian, English)", s3: "Word-by-word captions, brand names and numbers in colour",
+        s4: "From your own photos and videos, or AI-made scenes", s5: "Fast delivery, revisions until you're happy" }
+};
+function setLang(l) {
+  if (!T[l]) l = "uz";
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-t]").forEach(el => { el.textContent = T[l][el.dataset.t]; });
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.l === l)));
+  try { localStorage.setItem("mas_lang", l); } catch (e) {}
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.l)));
+let start = "uz";
+try { start = localStorage.getItem("mas_lang") || ""; } catch (e) {}
+if (!start) { const n = (navigator.language || "").slice(0, 2); start = n === "ru" ? "ru" : "uz"; }
+setLang(start);
+</script>
+</body>
+</html>
